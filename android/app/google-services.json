@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "974115324705",
+    "project_id": "balsas-entregas-ltda",
+    "storage_bucket": "balsas-entregas-ltda.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974115324705:android:2a5b36b1537239c654f460",
+        "android_client_info": {
+          "package_name": "com.example.balsas_entregas_ltda"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiC5vIuDciZ6dvFrSh2164nTH0uVjrxmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
