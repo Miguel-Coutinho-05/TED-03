@@ -37,6 +37,6 @@ Facilitar a comunicação entre comerciantes de pequeno porte e entregadores, pr
 
 ## AUTOR
 
-Marcos Miguel Coutinho
-Vinicius
-Emanuela
+Marcos Miguel Coutinho,
+ Vinicius
+, Emanuela
