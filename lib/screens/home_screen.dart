@@ -46,6 +46,12 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Future<void> sair(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+
+    Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     final usuario = FirebaseAuth.instance.currentUser;
@@ -62,6 +68,15 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Sair',
+            onPressed: () {
+              sair(context);
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
