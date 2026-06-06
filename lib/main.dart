@@ -23,20 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       title: 'Balsas Entregas LTDA',
-
       theme: ThemeData(primarySwatch: Colors.orange, useMaterial3: true),
-
       initialRoute: '/login',
-
       routes: {
         '/login': (context) => const LoginScreen(),
-
         '/home_vendedor': (context) => const HomeScreen(),
-
         '/home_entregador': (context) => const PedidoScreen(),
-
         '/novo_pedido': (context) => const NovoPedidoScreen(),
       },
     );

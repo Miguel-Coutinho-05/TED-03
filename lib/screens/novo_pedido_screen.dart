@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class NovoPedidoScreen extends StatefulWidget {
@@ -13,7 +15,37 @@ class _NovoPedidoScreenState extends State<NovoPedidoScreen> {
   final descricaoController = TextEditingController();
   final valorController = TextEditingController();
 
-  void salvarPedido() {
+  Future<void> salvarPedido() async {
+    final usuario = FirebaseAuth.instance.currentUser;
+
+    if (usuario == null) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Usuário não está logado.')));
+      return;
+    }
+
+    if (clienteController.text.trim().isEmpty ||
+        enderecoController.text.trim().isEmpty ||
+        descricaoController.text.trim().isEmpty ||
+        valorController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Preencha todos os campos.')),
+      );
+      return;
+    }
+
+    await FirebaseFirestore.instance.collection('pedidos').add({
+      'cliente': clienteController.text.trim(),
+      'endereco': enderecoController.text.trim(),
+      'descricao': descricaoController.text.trim(),
+      'valor': valorController.text.trim(),
+      'status': 'pendente',
+      'proprietarioId': usuario.uid,
+      'entregadorId': '',
+      'criadoEm': FieldValue.serverTimestamp(),
+    });
+
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Pedido cadastrado com sucesso!')),
     );
@@ -22,6 +54,17 @@ class _NovoPedidoScreenState extends State<NovoPedidoScreen> {
     enderecoController.clear();
     descricaoController.clear();
     valorController.clear();
+
+    Navigator.pop(context);
+  }
+
+  @override
+  void dispose() {
+    clienteController.dispose();
+    enderecoController.dispose();
+    descricaoController.dispose();
+    valorController.dispose();
+    super.dispose();
   }
 
   @override
