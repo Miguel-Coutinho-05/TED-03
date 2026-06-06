@@ -1,17 +1,42 @@
-# balsas_entregas_ltda
+# BALSAS ENTREGAS LTDA
 
-A new Flutter project.
+## DESCRIÇÃO
 
-## Getting Started
+Aplicativo desenvolvido em Flutter para gerenciamento de entregas locais.
 
-This project is a starting point for a Flutter application.
+O sistema permite que comerciantes cadastrem pedidos e entregadores aceitem e concluam entregas em tempo real.
 
-A few resources to get you started if this is your first Flutter project:
+## TECNOLOGIAS UTILIZADAS
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+* Flutter
+* Dart
+* Firebase Authentication
+* Cloud Firestore
+* Git
+* GitHub
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## FUNCIONALIDADES
+
+### COMERCIANTE
+
+* Cadastro e Login
+* Cadastro de Pedidos
+* Visualização de Pedidos
+* Cancelamento de Pedidos
+
+### ENTREGADOR
+
+* Login
+* Visualização de Pedidos Disponíveis
+* Aceitação de Pedidos
+* Finalização de Entregas
+
+## OBJETIVO
+
+Facilitar a comunicação entre comerciantes de pequeno porte e entregadores, proporcionando maior organização e controle das entregas locais.
+
+## AUTOR
+
+Marcos Miguel Coutinho
+Vinicius
+Emanuela
